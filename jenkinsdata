@@ -1,0 +1,12 @@
+ node {
+      stage('git') {
+        git 'https://github.com/immurali5/spring-petclinic.git' 
+      }
+      stage('mvn') {
+        sh 'mvn package'
+      }
+       stage('build&package') {
+        archive 'target/spring-petclinic-2.0.0.BUILD-SNAPSHOT.jar'
+        junit 'target/surefire-reports/*.xml'
+      }
+    }
