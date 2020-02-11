@@ -1,3 +1,3 @@
 FROM tomcat:latest
 MAINTAINER satya
-COPY springpet/* /usr/local/tomcat/webapps/
+COPY springpet/target/* /usr/local/tomcat/webapps/
